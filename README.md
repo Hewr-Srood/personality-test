@@ -11,4 +11,4 @@ npm  start  or  yarn  start
 
 ## 📝 Notes
 
-For later 🙂
+For the design i took this design from [dribbble](https://dribbble.com/shots/15842164-Personality-Test-App) and i tried to get some inspiration from it .
