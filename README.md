@@ -1,14 +1,14 @@
-# Expo Router Example
+# Personalioty Test App
 
-Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+This app built using [`react-natie expo`](https://docs.expo.dev/) with [`expo-router`](https://expo.github.io/router).
 
-## 🚀 How to use
+# 🚀 How to use
 
 ```sh
-npx create-expo-app -e with-router
+npm  install  or  yarn
+npm  start  or  yarn  start
 ```
 
 ## 📝 Notes
 
-- [Expo Router: Docs](https://expo.github.io/router)
-- [Expo Router: Repo](https://github.com/expo/router)
+For later 🙂
