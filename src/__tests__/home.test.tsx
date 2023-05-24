@@ -1,8 +1,10 @@
+import Home from '../../app/home';
+
 import React from 'react';
+
 import { render, fireEvent } from '@testing-library/react-native';
 
 import { useRouter } from 'expo-router';
-import Home from '../../app/home';
 
 jest.mock('expo-router', () => ({
   useRouter: jest.fn(),
