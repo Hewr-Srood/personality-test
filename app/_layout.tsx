@@ -1,8 +1,12 @@
-import { Stack } from 'expo-router';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
-import { store } from '../src/redux/store';
-import { COLORS } from '../src/config';
+
+import { Stack } from 'expo-router';
+
+import { store } from 'src/redux/store';
+
+import { COLORS } from 'configs';
+
 export const unstable_settings = {
   initialRouteName: 'home/index',
 };
