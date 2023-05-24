@@ -7,7 +7,10 @@
     "web": "expo start --web"
   },
   "jest": {
-    "preset": "react-native",
+    "preset": "jest-expo",
+    "roots": [
+      "."
+    ],
     "setupFilesAfterEnv": [
       "@testing-library/jest-native/extend-expect"
     ]
@@ -17,10 +20,9 @@
     "expo": "^48.0.7",
     "expo-constants": "~14.2.1",
     "expo-linking": "~4.0.1",
-    "expo-router": "^1.2.0",
+    "expo-router": "^1.7.2",
     "expo-splash-screen": "~0.18.1",
     "expo-status-bar": "~1.4.2",
-    "jest": "^29.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.71.8",
@@ -40,7 +42,10 @@
     "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
     "@testing-library/jest-native": "^5.4.2",
     "@testing-library/react-native": "^12.1.2",
-    "jest-expo": "^48.0.2"
+    "jest": "^29.2.1",
+    "@types/jest": "^26",
+    "jest-expo": "^48.0.2",
+    "ts-jest": "^29.0.5"
   },
   "resolutions": {
     "metro": "^0.73.7",

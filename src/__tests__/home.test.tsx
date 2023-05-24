@@ -1,6 +1,12 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import Home from '../../app/home/index';
+
+import { useRouter } from 'expo-router';
+import Home from '../../app/home';
+
+jest.mock('expo-router', () => ({
+  useRouter: jest.fn(),
+}));
 
 describe('Home', () => {
   it('renders the title and caption', () => {
@@ -30,8 +36,8 @@ describe('Home', () => {
   });
 
   it('renders the instruction card', () => {
-    const { getByText } = render(<App />);
-    const cardTitle = getByText('Instructions');
+    const { getByText } = render(<Home />);
+    const cardTitle = getByText('Instruction');
     const firstInstruction = getByText(
       'There are no right or wrong answers. follow your heart and choose what resonates with you',
     );
@@ -41,11 +47,11 @@ describe('Home', () => {
     expect(secondInstruction).toBeDefined();
   });
 
-  it('navigates to the questions screen', () => {
+  it('navigates to the questions screen when the "Take the test" button is pressed', () => {
+    const pushMock = jest.fn();
+    (useRouter as jest.Mock).mockReturnValue({ push: pushMock });
     const { getByText } = render(<Home />);
-    const homeButton = getByText('Take the test');
-    fireEvent.press(homeButton);
-    const testTitle = getByText('Test');
-    expect(testTitle).toBeDefined();
+    fireEvent.press(getByText('Take the test'));
+    expect(pushMock).toHaveBeenCalledWith('/questions');
   });
 });
