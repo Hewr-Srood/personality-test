@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import { Text, StyleSheet, TextStyle, TextProps } from 'react-native';
-import { COLORS } from '../config';
+import { Text, StyleSheet, TextProps } from 'react-native';
+
+import { COLORS, spacing } from 'configs';
 
 export const Caption: FC<TextProps> = props => {
   return (
@@ -13,6 +14,7 @@ export const Caption: FC<TextProps> = props => {
 const styles = StyleSheet.create({
   caption: {
     fontSize: 14,
+    lineHeight: spacing.xl,
     color: COLORS.caption,
   },
 });

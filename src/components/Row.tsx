@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react';
-import { FlexStyle, View, ViewProps, ViewStyle } from 'react-native';
+import { FlexStyle, View, ViewProps } from 'react-native';
 
 interface RowProps extends ViewProps {
   gap?: FlexStyle['gap'];

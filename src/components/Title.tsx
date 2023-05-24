@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Text, StyleSheet, TextProps } from 'react-native';
-import { COLORS } from '../config';
+
+import { COLORS } from 'configs';
 
 export const Title: FC<TextProps> = props => {
   return (
