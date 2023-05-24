@@ -1,8 +1,11 @@
 {
+  "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    
-  },
-  "types": { "include": ["jest"] },
-  "moduleResolution": "node",
-  "extends": "expo/tsconfig.base"
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"],
+      "components": ["src/components/index"],
+      "configs": ["src/configs/index"]
+    }
+  }
 }
