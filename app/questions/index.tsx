@@ -7,7 +7,7 @@ import { Slider } from '@miblanchard/react-native-slider';
 
 import { useRouter } from 'expo-router';
 
-import { COLORS, spacing } from 'src/configs';
+import { COLORS, height, spacing, width } from 'src/configs';
 import mockData from 'src/data/mockData.json';
 import { IAnswer, IQuestion, IResult } from 'src/interfaces';
 import { clearResult, setResult } from 'src/redux/features/resultSlice';
@@ -104,8 +104,9 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.white,
     overflow: 'visible',
-    width: Dimensions.get('screen').width,
-    height: Dimensions.get('screen').height - 30,
+    width,
+    paddingBottom: height * 0.05,
+    height,
   },
   sliderContainer: {
     width: '100%',

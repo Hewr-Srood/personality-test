@@ -1,8 +1,8 @@
 import { FC, useEffect } from 'react';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { Platform, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import Animated, { FadeInDown, FadeOutDown } from 'react-native-reanimated';
 
-import { BORDER_RADIUS, spacing } from 'src/configs';
+import { BORDER_RADIUS, spacing } from 'configs';
 
 interface SnackbarProps {
   message: string;
@@ -48,7 +48,7 @@ export const Snackbar: FC<SnackbarProps> = ({ message, onDismiss, variant = 'suc
 const styles = StyleSheet.create({
   snackbar: {
     position: 'absolute',
-    bottom: spacing.sm,
+    bottom: Platform.OS === 'android' ? spacing.md : spacing.sm,
     alignSelf: 'center',
     width: '100%',
     height: 60,

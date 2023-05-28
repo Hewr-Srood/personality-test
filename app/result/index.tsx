@@ -1,8 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
-import { VictoryContainer, VictoryPie } from 'victory-native';
+import { VictoryPie } from 'victory-native';
 
 import { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Modal, TouchableOpacity, FlatList } from 'react-native';
 
 import { Button, Row } from 'src/components';
 import { useAppSelector } from 'src/redux/store';
@@ -33,6 +33,7 @@ const Result = () => {
       { x: 'extrovert', y: 50 },
     ],
   });
+  const [showModal, setShowModal] = useState(false);
 
   const navigation = useNavigation();
 
@@ -62,9 +63,19 @@ const Result = () => {
   };
 
   const handleSeeAnswers = () => {
-    // Implement the logic to navigate to the answers screen
-    // You can customize this according to your navigation setup
+    setShowModal(true);
   };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const renderAnswerItem = ({ item }) => (
+    <View style={styles.answerItem}>
+      <Text style={styles.answerTitle}>{item.title}</Text>
+      <Text style={styles.answer}>{item.answer}</Text>
+    </View>
+  );
 
   return (
     <View style={styles.container}>
@@ -99,9 +110,27 @@ const Result = () => {
       </View>
 
       <Row style={styles.buttonContainer} alignItems='center'>
-        <Button title='Go Back' onPress={handleGoBack} />
+        <Button style={styles.backButton} title='Go Back' onPress={handleGoBack} />
+
         <Button title='See your answers' onPress={handleSeeAnswers} />
       </Row>
+
+      <Modal visible={showModal} animationType='fade' transparent>
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <TouchableOpacity style={styles.closeButton} onPress={handleCloseModal}>
+              <Text style={styles.closeButtonText}>Close</Text>
+            </TouchableOpacity>
+            <FlatList
+              showsVerticalScrollIndicator={false}
+              data={Object.values(result)}
+              keyExtractor={item => item.answer}
+              renderItem={renderAnswerItem}
+              contentContainerStyle={styles.answerList}
+            />
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 };
@@ -109,6 +138,7 @@ const Result = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    gap: 10,
     backgroundColor: COLORS.white,
     alignItems: 'center',
     justifyContent: 'center',
@@ -116,7 +146,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 20,
   },
   chartContainer: {
     backgroundColor: COLORS.darkgrey,
@@ -124,7 +153,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20,
     borderRadius: 10,
-    marginBottom: 20,
   },
   label: {
     fontSize: 16,
@@ -155,6 +183,50 @@ const styles = StyleSheet.create({
     gap: 10,
     paddingVertical: spacing.sm,
     paddingHorizontal: spacing.sm,
+  },
+  backButton: {
+    backgroundColor: COLORS.darkgrey,
+  },
+  modalContainer: {
+    flex: 1,
+    backgroundColor: '#00000070',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  modalContent: {
+    backgroundColor: COLORS.white,
+    width: '90%',
+    maxHeight: '80%',
+    borderRadius: 10,
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
+  },
+  closeButton: {
+    alignSelf: 'flex-end',
+    marginBottom: spacing.sm,
+  },
+  closeButtonText: {
+    color: COLORS.primary,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  answerList: {
+    padding: spacing.sm,
+    flexGrow: 1,
+  },
+  answerItem: {
+    borderBottomWidth: 1,
+    borderBottomColor: COLORS.darkgrey,
+    paddingVertical: spacing.sm,
+  },
+  answerTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: spacing.xs,
+  },
+  answer: {
+    fontSize: 14,
+    color: COLORS.darkgrey,
   },
 });
 
