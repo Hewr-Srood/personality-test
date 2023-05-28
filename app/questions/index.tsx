@@ -119,7 +119,11 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: '#000',
   },
-  questionsContainer: { paddingTop: 10, paddingHorizontal: spacing.md },
+  questionsContainer: {
+    paddingHorizontal: spacing.md,
+    flexGrow: 1,
+    justifyContent: 'center',
+  },
   buttonContainer: {
     paddingHorizontal: spacing.md,
     height: 50,
