@@ -48,7 +48,7 @@ export const Snackbar: FC<SnackbarProps> = ({ message, onDismiss, variant = 'suc
 const styles = StyleSheet.create({
   snackbar: {
     position: 'absolute',
-    bottom: Platform.OS === 'android' ? spacing.md : spacing.sm,
+    bottom: Platform.OS === 'android' ? spacing.md : spacing.xxl,
     alignSelf: 'center',
     width: '100%',
     height: 60,

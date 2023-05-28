@@ -100,8 +100,12 @@ const Result = () => {
           animate={{ duration: 2000 }}
           data={personality.data}
         />
-        <Text style={styles.label}>Introvert: {personality?.data[0].y}%</Text>
-        <Text style={styles.label}>Extrovert: {personality?.data[1].y}%</Text>
+        {personality?.data[0].y && (
+          <Text style={styles.label}>Introvert: {personality?.data[0].y}%</Text>
+        )}
+        {personality?.data[1].y && (
+          <Text style={styles.label}>Extrovert: {personality?.data[1].y}%</Text>
+        )}
       </View>
 
       <View style={styles.detailsContainer}>
