@@ -5,7 +5,9 @@
     "paths": {
       "src/*": ["src/*"],
       "components": ["src/components/index"],
-      "configs": ["src/configs/index"]
+      "configs": ["src/configs/index"],
+      "HOC": ["src/HOC/index"],
+      "assets": ["./assets/*"]
     }
   }
 }

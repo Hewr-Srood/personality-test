@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "title": "How do you prefer to spend your weekends?",
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Attending social events, parties, or outings with friends.",
+        "personalityTrait": "Extrovert"
+      },
+      {
+        "id": 2,
+        "answer": "Exploring outdoor activities or engaging in group sports.",
+        "personalityTrait": "Extrovert"
+      },
+      {
+        "id": 3,
+        "answer": "Relaxing at home, reading, or watching movies alone or with a close friend.",
+        "personalityTrait": "Introvert"
+      },
+      {
+        "id": 4,
+        "answer": "Engaging in creative hobbies or personal projects.",
+        "personalityTrait": "Introvert"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "How do you handle stress or pressure?",
+    "answers": [
+      {
+        "id": 1,
+        "answer": "By seeking support and discussing issues with friends or family.",
+        "personalityTrait": "Extrovert"
+      },
+      {
+        "id": 2,
+        "answer": "By taking a break, engaging in relaxation techniques, or having alone time.",
+        "personalityTrait": "Introvert"
+      },
+      {
+        "id": 3,
+        "answer": "By finding solutions independently and working through challenges on my own.",
+        "personalityTrait": "Introvert"
+      },
+      {
+        "id": 4,
+        "answer": "By talking it out with someone I trust and processing my thoughts and feelings.",
+        "personalityTrait": "Extrovert"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "How do you approach meeting new people?",
+    "answers": [
+      {
+        "id": 1,
+        "answer": "With enthusiasm and a desire to engage in conversations.",
+        "personalityTrait": "Extrovert"
+      },
+      {
+        "id": 2,
+        "answer": "With caution, taking time to observe before opening up.",
+        "personalityTrait": "Introvert"
+      },
+      {
+        "id": 3,
+        "answer": "With a reserved but friendly demeanor, allowing others to initiate conversations.",
+        "personalityTrait": "Introvert"
+      },
+      {
+        "id": 4,
+        "answer": "With confidence and a willingness to initiate conversations.",
+        "personalityTrait": "Extrovert"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "How do you prefer to communicate your ideas or opinions?",
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Through lively discussions and group interactions.",
+        "personalityTrait": "Extrovert"
+      },
+      {
+        "id": 2,
+        "answer": "Through thoughtful written communication or individual conversations.",
+        "personalityTrait": "Introvert"
+      },
+      {
+        "id": 3,
+        "answer": "Through well-prepared presentations or speeches.",
+        "personalityTrait": "Extrovert"
+      },
+      {
+        "id": 4,
+        "answer": "Through deep conversations with a few close individuals.",
+        "personalityTrait": "Introvert"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "How do you recharge and find inspiration?",
+    "answers": [
+      {
+        "id": 1,
+        "answer": "By being in the company of others, bouncing ideas off them, and engaging in social activities.",
+        "personalityTrait": "Extrovert"
+      },
+      {
+        "id": 2,
+        "answer": "By spending time alone in quiet environments, reflecting and introspecting.",
+        "personalityTrait": "Introvert"
+      },
+      {
+        "id": 3,
+        "answer": "By exploring new environments and seeking external stimuli.",
+        "personalityTrait": "Extrovert"
+      },
+      {
+        "id": 4,
+        "answer": "By immersing myself in artistic or creative pursuits.",
+        "personalityTrait": "Introvert"
+      }
+    ]
+  }
+]

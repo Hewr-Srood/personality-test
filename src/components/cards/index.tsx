@@ -1,3 +1,4 @@
 import { HomeCard } from './HomeCard';
+import { QuestionCard } from './QuestionCard';
 
-export { HomeCard };
+export { HomeCard, QuestionCard };
