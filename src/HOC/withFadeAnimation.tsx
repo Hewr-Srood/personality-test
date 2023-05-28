@@ -9,14 +9,10 @@ export const withFadeAnimation = <P extends object>(
       <View
         style={{
           width: '100%',
-
-          overflow: 'visible',
         }}>
         <Animated.View
           style={{
             width: '100%',
-
-            overflow: 'visible',
           }}
           entering={FadeIn?.duration(800)?.delay(300)}
           exiting={FadeOut?.duration(300)}>

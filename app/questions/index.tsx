@@ -7,10 +7,10 @@ import { Slider } from '@miblanchard/react-native-slider';
 
 import { useRouter } from 'expo-router';
 
-import { COLORS, spacing } from 'src/configs';
+import { COLORS, height, spacing, width } from 'src/configs';
 import mockData from 'src/data/mockData.json';
 import { IAnswer, IQuestion, IResult } from 'src/interfaces';
-import { setResult } from 'src/redux/features/resultSlice';
+import { clearResult, setResult } from 'src/redux/features/resultSlice';
 import { useAppDispatch, useAppSelector } from 'src/redux/store';
 
 import { QuestionCard, Button, Snackbar, Row } from 'components';
@@ -45,9 +45,18 @@ const Questions = () => {
     }
     if (stepper === 4) {
       router.push('/result');
+      return;
     }
     setValue(prev => prev + 0.2);
     setStepper(prev => prev + 1);
+  };
+  const handleBackPress = () => {
+    if (stepper === 0) {
+      dispatch(clearResult());
+      router.back();
+    }
+    setValue(prev => prev - 0.2);
+    setStepper(prev => prev - 1);
   };
   return (
     <View style={styles.container}>
@@ -75,13 +84,7 @@ const Questions = () => {
         <Button
           style={[styles.button, styles.backButton]}
           disabled={stepper === 0}
-          onPress={() => {
-            if (stepper === 0) {
-              router.back();
-            }
-            setValue(prev => prev - 0.2);
-            setStepper(prev => prev - 1);
-          }}
+          onPress={handleBackPress}
           title={'Back'}
         />
         <Button
@@ -101,8 +104,9 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.white,
     overflow: 'visible',
-    width: Dimensions.get('screen').width,
-    height: Dimensions.get('screen').height - 30,
+    width,
+    paddingBottom: height * 0.05,
+    height,
   },
   sliderContainer: {
     width: '100%',
@@ -115,7 +119,11 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: '#000',
   },
-  questionsContainer: { paddingTop: 10, paddingHorizontal: spacing.md },
+  questionsContainer: {
+    paddingHorizontal: spacing.md,
+    flexGrow: 1,
+    justifyContent: 'center',
+  },
   buttonContainer: {
     paddingHorizontal: spacing.md,
     height: 50,

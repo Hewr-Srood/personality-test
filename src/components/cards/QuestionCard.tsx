@@ -32,9 +32,10 @@ const Card: React.FC<QuestionCardProps> = ({ question, handleAnswer }) => {
       id,
       question_id: question.id,
       title: question.title,
-      answer: question?.answers[activeAnswer]?.answer,
-      personalityTrait: question?.answers[activeAnswer]?.personalityTrait,
+      answer: question?.answers[id - 1]?.answer,
+      personalityTrait: question?.answers[id - 1]?.personalityTrait,
     };
+    console.log(ans.personalityTrait);
     handleAnswer(ans);
   };
   useEffect(() => {
