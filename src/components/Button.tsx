@@ -1,9 +1,17 @@
 import { FC } from 'react';
-import { TouchableOpacity, StyleSheet, ViewStyle, TextStyle, Text, StyleProp, TouchableOpacityProps } from 'react-native';
+import {
+  TouchableOpacity,
+  StyleSheet,
+  ViewStyle,
+  TextStyle,
+  Text,
+  StyleProp,
+  TouchableOpacityProps,
+} from 'react-native';
 
 import { BORDER_RADIUS, COLORS } from 'configs';
 
-interface ButtonProps extends TouchableOpacityProps{
+interface ButtonProps extends TouchableOpacityProps {
   onPress: () => void;
   style?: StyleProp<ViewStyle>;
   textStyle?: TextStyle;
@@ -24,6 +32,7 @@ export const Button: FC<ButtonProps> = props => {
 const styles = StyleSheet.create({
   button: {
     flex: 1,
+    height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#705771',
