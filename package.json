@@ -16,6 +16,7 @@
     ]
   },
   "dependencies": {
+    "@miblanchard/react-native-slider": "^2.3.1",
     "@reduxjs/toolkit": "^1.9.5",
     "expo": "^48.0.7",
     "expo-constants": "~14.2.1",
@@ -23,6 +24,7 @@
     "expo-router": "^1.7.2",
     "expo-splash-screen": "~0.18.1",
     "expo-status-bar": "~1.4.2",
+    "lottie-react-native": "5.1.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.71.8",
@@ -34,6 +36,7 @@
     "react-native-web": "~0.18.7",
     "react-redux": "^8.0.5",
     "redux": "^4.2.1",
+    "redux-mock-store": "^1.5.4",
     "typescript": "^4.9.4",
     "victory-native": "^36.6.10"
   },

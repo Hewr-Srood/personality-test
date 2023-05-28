@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['@trivago/prettier-plugin-sort-imports'],
+  // plugins: ['@trivago/prettier-plugin-sort-imports'],
   importOrder: ['^react', 'react-native', 'expo', 'src', 'configs', 'components', '.styles'],
   importOrderSeparation: true,
   arrowParens: 'avoid',

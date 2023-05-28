@@ -19,7 +19,12 @@ export const Connector: FC<Props> = ({ width, height, rotate }) => {
           transform: [{ rotate }],
         },
       ]}>
-      <Svg renderToHardwareTextureAndroid={true} width={'90%'} height={height} fill='none'>
+      <Svg
+        renderToHardwareTextureAndroid
+        shouldRasterizeIOS
+        width={'90%'}
+        height={height}
+        fill='none'>
         <Circle cx='50%' cy={10} r={width} fill='#000' stroke='#fff' />
         <Circle cx='50%' cy={height - width} r={width} fill='#000' stroke='#fff' />
         <Rect

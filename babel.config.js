@@ -22,7 +22,9 @@ module.exports = function (api) {
           alias: {
             src: './src',
             components: './src/components',
+            HOC: './src/HOC',
             configs: './src/configs',
+            assets: './assets',
           },
         },
       ],

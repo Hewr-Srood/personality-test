@@ -1,11 +1,11 @@
 import { FC } from 'react';
-import { TouchableOpacity, StyleSheet, ViewStyle, TextStyle, Text } from 'react-native';
+import { TouchableOpacity, StyleSheet, ViewStyle, TextStyle, Text, StyleProp, TouchableOpacityProps } from 'react-native';
 
 import { BORDER_RADIUS, COLORS } from 'configs';
 
-interface ButtonProps {
+interface ButtonProps extends TouchableOpacityProps{
   onPress: () => void;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
   textStyle?: TextStyle;
   title: string;
 }
